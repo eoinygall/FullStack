@@ -1,6 +1,6 @@
-import MeetupDetail from '../../components/games/GameDetail'
+import GameDetail from '../../components/games/GameDetail'
 import { useRouter } from 'next/router'
-import GlobalContext from "../../pages/store/globalContext"
+import GlobalContext from "../store/globalContext"
 import { useContext } from 'react'
 
 export default function () {
@@ -9,9 +9,9 @@ export default function () {
 
     // Back to basics, a simple for loop. Also trim() comes into play as it usually does!
     let returnVal = null
-    for (let ii = 0; ii < globalCtx.theGlobalObject.meetings.length; ii++) {
-        let temp = globalCtx.theGlobalObject.meetings[ii]
-        if (temp.GameId.trim() == router.query.GameId.trim()) {
+    for (let ii = 0; ii < globalCtx.theGlobalObject.game.length; ii++) {
+        let temp = globalCtx.theGlobalObject.game[ii]
+        if (temp.GameId == router.query.GameId.trim()) {
             returnVal = <GameDetail image={temp.image} title={temp.title} description={temp.description} />
         }
     }

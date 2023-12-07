@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import GlobalContext from "../store/globalContext"
 import { useContext } from 'react'
 
-function NewMeetupPage() {
+function NewGamePage() {
     const router = useRouter()
     const globalCtx = useContext(GlobalContext)
 
@@ -16,4 +16,4 @@ function NewMeetupPage() {
     return <NewGameForm onAddGame={addGameHandler} />
 }
 
-export default NewMeetupPage
+export default NewGamePage
